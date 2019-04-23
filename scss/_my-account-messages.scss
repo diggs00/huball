@@ -1,0 +1,90 @@
+.myAccount-message {
+	padding:20px;
+	border: 1px solid $color-green;
+	background-color: rgba( $color-green, .1 );
+	display: flex;
+	span.icon {
+		flex-basis: 5%;
+		color: $color-green;
+		font-size: $font-size-xlarge;
+		margin-right: 10px;
+	}
+	.myAccount-message-text {
+			flex-basis: 75%;
+			@media screen and (min-width: $break-desktop) {
+				flex-basis: 85%;
+			}
+		p {
+			color: $color-green;
+			margin-bottom: 10px;
+			&:nth-child(2) {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	.close {
+		margin-left: auto;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		background: white;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+		border-radius: 50px;
+		border: 1px solid $color-button;
+		&:hover {
+			background: $color-link;
+			&::before, &::after {
+				background: $color-white;
+			}
+		}
+
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			width: 70%;
+			height:70%;
+			top: 50%;
+			left: 15%;
+			margin-top: -1px;
+			background: $color-link;
+			height: 1px;
+			transition-property: background-color;
+			transition-duration: 300ms;
+			transition-timing-function: ease-out;
+			transition-delay: initial;
+		}
+		&::before {
+			transform: (rotate(45deg));
+		}
+		&::after {
+			transform:(rotate(-45deg));
+		}
+
+	}
+}
+
+
+
+.myAccount-message.error {
+	border: 1px solid $color-red;
+	background-color: rgba( $color-red, .1 );
+	span.icon {
+		color: $color-red;
+	}
+	.myAccount-message-text {
+		flex-basis: 100%;
+		p {
+			color: $color-red;
+		}
+	}
+}
+
+
+
+
+
+

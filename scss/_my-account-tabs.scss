@@ -1,0 +1,59 @@
+
+.myAccount-tab-container {
+  width: 100%;
+
+  .state{
+    position: absolute;
+    left: -10000px;
+  }
+
+  .myAccount-tabs{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+      
+    .tab{
+      flex-grow: 1;
+      padding: .7rem;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      line-height: 1;
+      border: 1px solid $color-darkgrey;
+      display: inline-block;
+      vertical-align: top;
+      background-color: $color-mediumgrey;
+      &:first-child {
+        border-right: none;
+      }
+      &:hover{
+        background-color: $color-white;
+      }
+    }
+    
+    .panel {
+      background-color: $color-white;
+      padding: 20px;
+      display: none;
+      width: 100%;
+      flex-basis: auto;
+    }
+  }
+}
+
+#tab-one:checked ~ .myAccount-tabs #tab-one-label,
+#tab-two:checked ~ .myAccount-tabs #tab-two-label{
+    background-color: $color-white;
+    cursor: default;
+    border-bottom: 4px solid $color-button;
+}
+
+#tab-one:checked ~ .myAccount-tabs #tab-one-content,
+#tab-two:checked ~ .myAccount-tabs #tab-two-content{
+    display: block;
+}
+
+
+

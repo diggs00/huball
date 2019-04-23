@@ -1,0 +1,359 @@
+// Media Queries
+$break-desktop: 800px;
+
+
+body {
+  background: white;
+  margin-bottom: 70px;
+}
+
+
+header {
+	margin-top: 56px;
+	padding: 60px 0;
+	color: $color-white;
+	background: #23A6D5;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(-20deg, #cf1d29, #44b549, #cf1d29, #503174, #503174 );  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(-20deg, #cf1d29, #44b549, #cf1d29, #503174, #503174); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+
+	@media screen and (min-width: $break-desktop) {
+		margin-top: 0px;
+	}
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
+		text-shadow: 5px 5px 0px $color-text;
+		color: $color-white;
+		  margin: 0.67em 0;
+	}
+
+	p {
+		color: $color-white;
+		line-height: 1.15;
+		@media screen and (min-width: $break-desktop) {
+			font-size: 1.125em;
+			line-height: 1.5;
+		}
+	}
+}
+
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+hr {
+	margin: 100px 0px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $color-mediumgrey;
+    padding: 0; 
+}
+
+section {
+	 &.download-section {
+		background-color: $color-lightgrey;
+		margin-bottom: 80px;
+		@media screen and (min-width: $break-desktop) {
+			padding: 60px 0;
+			margin-bottom: 100px;
+		}
+		.downloads {
+			background-color: $color-white;
+			padding: 30px 0px;
+			text-align: center;
+			border: 1px solid $color-mediumgrey;
+			@media screen and (min-width: $break-desktop) {
+				margin-top: -100px;
+				margin-bottom: -100px;
+			}
+			h2.sg {
+				font-size: 1.25em;
+			}
+		}
+	}
+}
+
+
+// NAVIGATION
+aside {
+	width: 100%;
+	background-color: $color-white;
+	padding: 10px;
+	position:fixed;
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	top:0;
+	z-index:99999;
+	border-bottom:1px solid $color-mediumgrey;
+	@media screen and (min-width: $break-desktop) {
+		position: static;
+		display: block;
+		flex-basis: 220px;
+		flex-grow: 0;
+		flex-shrink:0;
+		width: 220px;
+		background-color: $color-white;
+		padding: 10px;
+		border-bottom: none;
+	}
+	h2.sg {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.25em;
+		font-weight: 800;
+		text-shadow: 3px 3px 0px $color-mediumgrey;
+		flex: 1 0 85%;
+		margin-bottom: 0px;
+		@media screen and (min-width: $break-desktop) {
+			flex: auto;
+		}
+
+
+	}
+	.toggle-nav {
+		flex: 1 0 15%;
+		text-align: right;
+		@media screen and (min-width: $break-desktop) {
+			display: none;
+		}
+		&:after {
+			content: "\f0c9";
+			font-family: 'FontAwesome';
+			font-size: 2rem;
+			cursor: pointer;
+			font-weight: 900;
+		}
+		&.active {
+			&:after {
+				content: "\f00d";
+				font-family: 'FontAwesome';
+				font-size: 2rem;
+				cursor: pointer;
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+
+nav {
+	flex: 1 0 100%;
+	display:none;
+	@media screen and (min-width: $break-desktop) {
+		flex: auto;
+		display: block !important;
+	}
+	ul.fa-ul {
+		padding:0px;
+		list-style-type: none;
+		margin-left: 1.5em;
+		li {
+			a {
+				padding: .5em 0em;
+				text-decoration: none;
+				display: block;
+				color:inherit;
+				&:hover {
+					-o-transition:.5s;
+					-ms-transition:.5s;
+					-moz-transition:.5s;
+					-webkit-transition:.5s;
+					transition:.5s;
+					color: darken( $color-lightgrey, 20% );
+				}
+			}
+		}
+	}
+}
+
+
+// CONTENT
+main{ 
+	&.content {
+		width: 100%;
+		// background-color: pink;
+		@media screen and (min-width: $break-desktop) {
+			max-width: calc(100% - 220px); //sizes for nav that is 220px wide
+			// background-color: pink;
+			padding: 0 2rem;
+			flex-grow: 1;
+			// flex-basis: 0%;
+		    border-left: 1px solid $color-mediumgrey;
+		}
+		//pushes content over 220px via Jquery add class
+		&.margin-nav {
+			//removes margin for small screens
+			margin-left:0px;
+			@media screen and (min-width: $break-desktop) {
+				margin-left: 220px;
+			}
+		}
+	}
+}
+
+
+
+article {
+	margin-bottom: 40px;
+}
+
+
+// Typography
+
+
+body.sg {
+	font-family: 'Lato', sans-serif;
+	color: $color-text;
+}
+
+ul.sg {
+	li {
+
+		font-family: 'Lato', sans-serif;
+			color: $color-text;
+	}
+
+}
+
+h1.sg, h2.sg, h3.sg, p.sg {
+	font-family: 'Lato', sans-serif;
+	 text-transform: none;
+}
+
+
+h1.sg {
+		font-size: 2em;
+		font-weight: 700;
+	@media screen and (min-width: $break-desktop) {
+		//Base browser font size is 16px, noramlize.css changes it to 2em(32px), 3em changes it to 16x3 = 48px
+		font-size: 3em;
+	}
+}
+
+h2.sg {
+		font-size: 1.75em;
+		margin:0px 0px 15px 0px;
+		font-weight: 700;
+	@media screen and (min-width: $break-desktop) {
+		//Base browser font size is 16px, noramlize.css changes it to 2em(32px), 3em changes it to 16x3 = 48px
+		font-size: 2.2em;
+
+	}
+}
+
+h3.sg {
+		font-size: 1.2em;
+		margin:0px 0px 15px 0px;
+		font-weight: 700;
+	@media screen and (min-width: $break-desktop) {
+		//Base browser font size is 16px, noramlize.css changes it to 2em(32px), 3em changes it to 16x3 = 48px
+		font-size: 1.2em;
+
+	}
+}
+
+
+
+
+p.sg {
+	font-size: 1em;
+	margin-bottom:20px;
+	margin-top:0px;
+	font-family: 'Lato', sans-serif;
+	 	font-weight: normal;
+  font-size: $font-size-base;
+}
+
+
+a.sg {
+	font-family: 'Lato', sans-serif;
+}
+
+nav {
+	margin-top: 20px;
+	li {
+	font-size: 1em;
+	margin-top:0px;
+	font-family: 'Lato', sans-serif;
+	font-weight: normal;
+  	font-size: $font-size-base;
+	}
+}
+// ICONS -FontAWESOME
+
+.fas {
+	padding-right:20px;
+}
+
+
+
+// PRE CODE
+:not(pre) > code {
+    border: 0px solid #eee;
+    color: #E73C7E;
+    font-size: 16px;
+    border-radius: 0;
+    padding: 0px 5px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.mb-none {
+	margin-bottom: 0px !important;
+}
+
+
+.mb-small {
+	margin-bottom: 10px !important;
+}
+
+.mb-medium {
+	margin-bottom: 30px;
+}
+
+.gray-box {
+	background-color: #F5F5F5;
+	padding:20px;
+}

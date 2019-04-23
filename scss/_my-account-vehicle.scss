@@ -1,0 +1,98 @@
+.myAccount-vehicletile-container {
+    border: 1px solid $color-darkgrey;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $break-desktop) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    p:first-of-type {
+        margin-bottom: 15px;
+    }
+    .vehicletile-image-container {
+        @media screen and (min-width: $break-desktop) {
+            flex-basis: 33.3%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 20px;
+        }
+        .vehicletile-image {
+            background: url(https://media.carbook.com/MediaGallery/media/Mjk4NTQ2Xk1lZGlhIEdhbGxlcnk/gRXJ8lc4okfBm8dNLKsx3SWKP3-rpUidctvFsKY4MA4c3is7Ro3jqlBX5JLY43qc_irjnUY1nEk/cc_2015BUI001a_01_640_17U.png) center center no-repeat;
+            background-size: auto 100%;
+            text-align: center;
+            height: 210px;
+            border-bottom: 1px solid $color-darkgrey;
+            @media screen and (min-width: $break-desktop) {
+                background-size: 100%;
+                border-bottom: none;
+                height: 250px;
+            }
+        }
+    }
+    .vehicletile-content { 
+        padding: 20px 20px 0px 20px; 
+        @media screen and (min-width: $break-desktop) {
+            flex-basis: 33.3%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 20px;
+        }
+        .myAccount-vehicle-specifics {
+            @media screen and (min-width: $break-desktop) {
+                margin-bottom: 15px;
+            }
+            &:nth-child(2n) {
+                @media screen and (min-width: $break-desktop) {
+                    margin-bottom: 0px;
+                }
+            }
+            p {
+                margin-bottom: 0px;
+            }
+            .myAccount-vehicle-value {
+                display: flex;
+                p:nth-child(2) {
+                    margin-left: auto;
+
+                }
+            }
+        }
+        hr {
+            margin: 20px 0px;
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid $color-darkgrey;
+            padding: 0;
+            @media screen and (min-width: $break-desktop) {
+                display: none;
+            }
+        }
+    }
+    .myAccount-vehicle-cta {
+        padding: 0px 20px 10px 20px; 
+        @media screen and (min-width: $break-desktop) {
+            flex-basis: 33.3%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 20px; 
+            
+        }
+    }
+    .myAccount-vehicletile-controls {
+        padding: 20px;
+        border-top: 1px solid $color-darkgrey;
+        display: flex;
+        @media screen and (min-width: $break-desktop) {
+            flex-basis: 100%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        p {
+            margin:0px;
+        }
+        p.remove {
+            margin-left: auto;
+        }
+    }
+}

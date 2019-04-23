@@ -1,0 +1,16 @@
+.myAccount-username-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding:20px;
+	margin-bottom: 20px;
+	border: 1px solid $color-darkgrey;
+	@media screen and (min-width: $break-desktop) {
+		flex-direction: row;
+	}
+	p, a {
+		@media screen and (min-width: $break-desktop) {
+			margin:0px;
+		}
+	}
+}

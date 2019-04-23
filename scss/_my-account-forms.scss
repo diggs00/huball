@@ -1,0 +1,330 @@
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+ label {
+ 	font-family: $font-family-bold;
+	max-width: 100%;
+	display: block;
+	margin: 0px 0px 10px 0px;
+}
+
+
+[type=color], [type=date], [type=datetime-local],
+[type=datetime], [type=email], [type=month],
+[type=number], [type=password], [type=search],
+[type=tel], [type=text], [type=time],
+[type=url], [type=week], select, textarea {
+	display: block;
+	border: 1px solid $color-form-border;
+	border-radius: 0px;
+	padding: .75rem;
+	outline: none;
+	background: transparent;
+	margin-bottom: 20px;
+	font-size: $font-size-base;
+	width: 100%;
+	max-width: 100%;
+	line-height: 1;
+	height: 45px;
+	&::placeholder {
+		color: $color-form-text-placeholder;
+		opacity: 1; 
+	}
+
+	&:-ms-input-placeholder { 
+		color: $color-form-text-placeholder;
+	}
+
+	&::-ms-input-placeholder {
+		color: $color-form-text-placeholder;
+	}
+ }
+
+
+ select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 100%;
+	background: url("../img/formSelectArrow.png") no-repeat right;
+	padding-right: 30px;
+ }
+
+
+
+ label.myAccount-form-checkbox{
+	display: inline;
+	font-size: $font-size-small;
+	line-height: 1.3em;
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+ }
+
+
+
+.myAccount-form-checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+.myAccount-checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	border: 1px solid $color-form-border;
+}
+
+
+
+
+.myAccount-form-checkbox input:checked ~ .myAccount-checkmark {
+	background-color: $color-button;
+}
+
+
+.myAccount-checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+
+.myAccount-form-checkbox input:checked ~ .myAccount-checkmark:after {
+	display: block;
+}
+
+
+.myAccount-form-checkbox .myAccount-checkmark:after {
+	left: 7px;
+	top: 4px;
+	width: 5px;
+	height: 10px;
+	border: solid $color-white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+.myAccount-form-error {
+	label,p,input,select {
+		color:$color-error;
+	}
+	input,select {
+		border-color: $color-error;
+	}
+	p {
+		margin-top: 20px;
+	}
+}
+
+
+
+
+
+
+
+
+.myAccount-password {
+	display: flex;
+	flex-wrap: wrap;
+	&.error {
+		input {
+			border-right: none;
+			border-color: $color-error;
+			color: $color-error;
+			margin-bottom: 0px;
+			flex: 0 0 75%;
+		}
+		p {
+			margin-top: 20px;
+			color: $color-error;
+		}
+	}
+
+	&.success {
+		input {
+			border-right: none;
+			border-color: $color-success;
+			margin-bottom: 0px;
+			flex: 0 0 75%;
+		}
+	}
+
+	input {
+		border-right: none;
+		margin-bottom: 0px;
+		flex: 0 0 75%;
+	}
+	button {
+		flex: 0 0 25%;
+		margin-bottom:0px;
+		height: 45px;
+	}
+	small a, small p {
+		display: inline-block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		flex: 0 0 100%;
+	}
+}
+
+
+
+
+.password-meter-container {
+  text-align: center;
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 0px;
+  }
+
+}
+
+
+
+.password-meter {
+   position: relative;
+   flex-basis: 100%;
+   margin-bottom: 20px;
+}
+
+.password-meter-body {
+   height: 10px;
+   background-color: $color-mediumgrey;
+   position: relative;
+   margin-bottom: 20px;
+   p {
+   	padding-top: 10px;
+    margin-bottom: 0px;
+   }
+}
+
+.password-meter-bar {
+   height: 10px;
+   position: absolute;
+   z-index: 1;
+   margin-bottom: 10px;
+   &.password-meter-bar-strong {
+      background-color: $color-green;
+      width: 100%;
+   }
+
+   &.password-meter-bar-ok {
+      background-color: $color-yellow;
+      width: 60%;
+   }
+
+   &.password-meter-bar-weak {
+      background-color: $color-red;
+      width: 30%;
+   }
+}
+ 
+
+
+
+
+
+
+
+
+ul.myAccount-password-instruction {
+	list-style-type: none;
+	margin:0px 0px 20px 0px;
+	padding:0px;
+	li {
+		margin:0px 0px 5px 0px;
+		display: flex;
+		align-items: center;
+		&.success {
+			.check-mark__wrapper {
+				border: 2px solid $color-green;
+				.check-mark {
+					background-color: $color-green;
+				}
+			}       
+		}
+		&.error {
+			.check-mark__wrapper {
+				border: 2px solid $color-red;
+				.check-mark {
+					background-color: $color-red;
+				}
+			}       
+		}
+	}
+	p {
+		display: inline-block;
+		margin-bottom: 0px;
+		font-size: $font-size-xsmall;
+	}
+}
+
+.check-mark__wrapper {
+	width: 17px;
+	height: 17px;
+	margin: 0px 5px 0px 0px;
+	border: 2px solid $color-text;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+}
+
+
+.check-mark {
+	position: relative;
+	width: 5px;
+	height: 9px;
+	margin-left: 4px;
+	margin-bottom: 0px;
+	margin-top: 1px;
+	background-color: $color-text;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.check-mark::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -1px;
+	right: 2px;
+	z-index: 10;
+	width: 5px;
+	height: 8px;
+	background-color: $color-white;
+}
+
+
+
+.myAccount-form-search {
+	display: flex;
+	margin-bottom: 20px;
+	[type=search] {
+		flex-basis: 100%;
+		margin-right: 20px;
+		margin-bottom: 0px;
+	}
+	[type=submit], button {
+		flex-basis: 25%;
+		margin-bottom: 0px;
+	}
+}
+
+
+
